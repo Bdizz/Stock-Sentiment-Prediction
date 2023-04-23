@@ -3,13 +3,16 @@ import pickle
 import os
 
 
-def load_data():
+def load_data(train_file):
     """
     Loads data from CSV file and returns the data as a pandas dataframe
     """
-    data = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data/train.csv'))
+    data = pd.read_csv(train_file)
     return data
 
+
+def load_model(model_file, vocab_file):
+    with open
 
 def save_model(model, vocab, model_file, vocab_file):
     """
