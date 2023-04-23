@@ -16,6 +16,3 @@ MODEL_DIR = os.path.join(os.path.dirname(__file__), 'models')
 MODEL_FILE = os.path.join(MODEL_DIR, 'model.pth')
 VOCAB_FILE = os.path.join(MODEL_DIR, 'vocab.pkl')
 
-
-
-
