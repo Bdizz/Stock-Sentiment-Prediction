@@ -8,7 +8,7 @@ from textblob import TextBlob
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-url = "https://finance.yahoo.com/rss/headline?s=MDWT"
+url = "https://finance.yahoo.com/rss/headline?s=TSLA"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
 
 response = requests.get(url, headers=headers)
@@ -22,11 +22,11 @@ items = soup.find_all('item')
 stop_words = set(stopwords.words('english'))
 
 
-
 # initialize empty lists for title tokens, desc tokens, and categories
 title_tokens_list = []
 desc_tokens_list = []
 categories = []
+
 
 # loops through each item and extracts relevant data
 def scrape():
