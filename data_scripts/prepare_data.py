@@ -6,7 +6,7 @@ import random
 def data_prep():
 
     # load the labeled data from the CSV
-    with open(os.path.join(os.path.dirname(__file__), 'data/labeled_data.csv'), newline='', encoding='utf-8') as f:
+    with open(os.path.join(os.path.dirname(__file__), '../data/labeled_data.csv'), newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
         data = list(reader)
 
@@ -22,11 +22,11 @@ def data_prep():
     test_data = data[split_index:]
 
     # write the training and testing data to the csv's
-    with open(os.path.join(os.path.dirname(__file__), 'data/train.csv'), 'w', newline='', encoding='utf-8') as f:
+    with open(os.path.join(os.path.dirname(__file__), '../data/train.csv'), 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(train_data)
 
-    with open(os.path.join(os.path.dirname(__file__), 'data/test.csv'), 'w', newline='', encoding='utf-8') as f:
+    with open(os.path.join(os.path.dirname(__file__), '../data/test.csv'), 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(test_data)
 

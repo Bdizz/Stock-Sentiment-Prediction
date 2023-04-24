@@ -1,7 +1,7 @@
 from data_scripts.scraping import scrape
 from src.test_model import test_model
 from src.train_model import train_model
-from config import TEST_FILE
+from data_scripts.prepare_data import data_prep
 
 
 def main():
