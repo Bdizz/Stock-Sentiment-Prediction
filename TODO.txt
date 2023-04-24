@@ -1,0 +1,14 @@
+
+IMMEDIATE:
+
+Fix scraping function not updating the test.csv and train.csv
+The data in there is still from the original stock.
+
+
+
+
+
+
+
+
+CAN WAIT:
