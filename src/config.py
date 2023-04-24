@@ -1,7 +1,7 @@
 import os
 
 # paths to data files
-DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+DATA_DIR = "/home/brandon/Desktop/Sentiment_Analysis/data"
 TRAIN_FILE = os.path.join(DATA_DIR, 'train.csv')
 TEST_FILE = os.path.join(DATA_DIR, 'test.csv')
 
@@ -12,7 +12,7 @@ ALPHA = .1
 RANDOM_STATE = 42
 
 # Model Paths
-MODEL_DIR = os.path.join(os.path.dirname(__file__), 'models')
+MODEL_DIR = "/home/brandon/Desktop/Sentiment_Analysis/models"
 MODEL_FILE = os.path.join(MODEL_DIR, 'model.pth')
 VOCAB_FILE = os.path.join(MODEL_DIR, 'vocab.pkl')
 

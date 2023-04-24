@@ -1,3 +1,4 @@
+import nltk
 import requests
 import re
 import os
@@ -7,8 +8,7 @@ from textblob import TextBlob
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-
-url = "https://finance.yahoo.com/rss/headline?s=TRMB"
+url = "https://finance.yahoo.com/rss/headline?s=LUMN"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
 
 response = requests.get(url, headers=headers)
@@ -22,11 +22,11 @@ items = soup.find_all('item')
 stop_words = set(stopwords.words('english'))
 
 
+
 # initialize empty lists for title tokens, desc tokens, and categories
 title_tokens_list = []
 desc_tokens_list = []
 categories = []
-
 
 # loops through each item and extracts relevant data
 def scrape():
@@ -63,7 +63,7 @@ def scrape():
             sentiment_label = "neutral"
 
         # write the data to the CSV
-        with open(os.path.join(os.path.dirname(__file__), 'data/labeled_data.csv'), "a", newline='') as f:
+        with open(os.path.join(os.path.dirname(__file__), '../data/labeled_data.csv'), "a", newline='') as f:
             writer = csv.writer(f)
             writer.writerow([title, description, sentiment_label])
 
@@ -72,9 +72,9 @@ def scrape():
         desc_tokens_list.append(desc_tokens)
         categories.append(sentiment_label)
 
-        print("Title Tokens", title)
-        print("Description tokens", description)
-        print("Category", sentiment_label)
+        print("Title Tokens:", title_tokens)
+        print("Description tokens:", desc_tokens)
+        print("Category:", sentiment_label)
         print("\n")
 
     # return a list of tuples containing title tokens, desc tokens, and category
